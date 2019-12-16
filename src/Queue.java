@@ -1,3 +1,14 @@
+/*
+ * Jerry Tian
+ * ICS4U1
+ * Dec.15, 2019
+ * For Mr.Radulovic
+ * ADT assignment
+ * 
+ *  This class contains information and functions for a link queue(dynamic).
+ *  A queue is like an arraylist that its size is dynamic 
+ *  but each element has a pointer that point to the previous element or the next element
+ */
 public class Queue<T>{
 
 	private Node<T> first = new MyNode<T>(null);

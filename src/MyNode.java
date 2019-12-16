@@ -1,3 +1,12 @@
+/*
+ * Jerry Tian
+ * ICS4U1
+ * Dec.15, 2019
+ * For Mr.Radulovic
+ * ADT assignment
+ * 
+ *  This class contains information(like value, next, last) for  node.
+ */
 public class MyNode<T> implements Node<T>{
 	private T data;
 	Node<T> next;

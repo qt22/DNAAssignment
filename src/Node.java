@@ -1,3 +1,12 @@
+/*
+ * Jerry Tian
+ * ICS4U1
+ * Dec.15, 2019
+ * For Mr.Radulovic
+ * ADT assignment
+ * 
+ *  This interface provides methods for MyNode class.
+ */
 public interface Node<T> {
 
 	
