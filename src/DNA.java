@@ -15,13 +15,12 @@ public class DNA {
 		DNA dna = new DNA();
 		dna.loadfile("src//DATA.txt");
 		
-		String initGene1 = dna.initialGenes[0];
-		String resultGene1 = dna.mutatedGenes[0];
-		Node<String> gene1 = new MyNode<String>(initGene1);
-		Node<String> Gene1 = new MyNode<String>(resultGene1);
+		for(int i = 0; i < dna.numGenes; i++) {
+			Node<String> startGene = new MyNode<String>(dna.initialGenes[i]);
+			Node<String> endGene = new MyNode<String>(dna.mutatedGenes[i]);
+			dna.BFS(startGene, endGene);
+		}
 		
-		dna.BFS(gene1, Gene1);
-
 		}
 	
 	
@@ -140,8 +139,6 @@ public class DNA {
 	
 	public void BFS(Node<String> initGene, Node<String>resultGene) {
 		
-		/*Node<String> head = new Node<String>();
-		Node<String> tail = new Node<String>();*/
 		Queue<String> q = new Queue<String>();
 		q.enqueue(initGene); // the initial gene(also the root gene)
 		
@@ -151,8 +148,10 @@ public class DNA {
 				result_index = i;
 		}
 		
+		boolean ifsearched = false;
 		
 		while(!q.isEmpty()) {
+			ifsearched = true;
 			Node<String> childnode = q.peek();
 			int root_index = 0;
 			for(int i = 0; i < numValidGenes; i++) {
@@ -228,11 +227,15 @@ public class DNA {
 			
 			
 			if(ifvisited[result_index]) {
+				ifsearched = false;
 				System.out.println("YES");
 				System.out.println(probability[result_index]);
 				break;
 			}
 			q.dequeue();
+		}
+		if(ifsearched) {
+			System.out.println("NO");
 		}
 	}
 }
